@@ -83,6 +83,11 @@ const EmployeeNavBar = ({ onButtonClick }) => {
           )}
         </div>
 
+        {/* Clock In Button */}
+        <div className="clock-in-icon" onClick={() => onButtonClick('clockin')}>
+          <img src="https://img.icons8.com/?size=100&id=82767&format=png&color=FFFFFF" alt="Clock In" className='clock-in-icon' />
+        </div>
+
 
         {/* Profile Dropdown */}
         <div className="profile-icon" onClick={() => toggleDropdown('profile')} ref={dropdownRefs.profile}>

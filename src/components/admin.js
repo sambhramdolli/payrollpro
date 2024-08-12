@@ -20,6 +20,7 @@ import TeamLead from './Employee Directory/Teamlead.js';
 import MemberDetails from './Employee Directory/MemberDetails.js';
 import TaskDetails from './Employee Directory/TaskDetails.js';
 import TeamMembers from './Employee Directory/TeamMembers.js'; // Import TeamMembers
+import Tickets from './Ticktes.js';
 
 const Admin = () => {
   const [selectedComponent, setSelectedComponent] = useState(null);
@@ -107,6 +108,9 @@ const Admin = () => {
           </div>
           <div className={`component ${selectedComponent === 'teammembers' ? 'slide slide-in' : 'slide'}`}>
             {selectedComponent === 'teammembers' && <TeamMembers team={selectedTeam} />}
+          </div>
+          <div className={`component ${selectedComponent === 'tickets' ? 'slide slide-in' : 'slide'}`}>
+            {selectedComponent === 'tickets' && <Tickets team={selectedTeam} />}
           </div>
         </div>
       </div>

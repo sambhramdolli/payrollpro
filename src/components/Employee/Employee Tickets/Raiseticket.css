@@ -8,6 +8,8 @@
     z-index: 1; /* Ensure content is above the background */
     width: 50%;
     margin-right: 500px;
+    height: 70vh;
+    overflow-y: auto;
 }
 
 .submit-ticket::before {
@@ -30,10 +32,7 @@ h1 {
 .gf{
     color:white;
 }
-.form-contain {
-    max-height: 500px; /* Set maximum height */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
+
 
 .form-group {
     margin-bottom: 15px;

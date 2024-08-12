@@ -31,7 +31,7 @@ const SideBar = ({ onButtonClick }) => {
       >
         <button className="button4" onClick={() => onButtonClick('addEmployee')}>ADD EMPLOYEE</button>
         <button className="button5" onClick={() => onButtonClick('viewLeaveRequest')}>LEAVE REQUESTS</button>
-        <button className="button6" onClick={() => onButtonClick('')}>TICKETS</button>
+        <button className="button6" onClick={() => onButtonClick('tickets')}>TICKETS</button>
         <button className="button7" onClick={() => onButtonClick('')}>EMP ATTENDANCE</button>
       </div>
     </div>
