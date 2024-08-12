@@ -1,0 +1,99 @@
+/* src/components/Admin/LeaveRequests.css */
+
+.admin-dashboard {
+    padding: 20px;
+    z-index: -1;
+    margin-right: 30px;
+    width: 966px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 430px;
+    /* background-color: rgb(7, 10, 92);  */
+    background-color: white;
+    color: black;
+    overflow-y: scroll;
+  }
+  
+  .admin-dashboard::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .admin-dashboard {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  
+  
+  .admin-dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #100c0c;
+  }
+  
+  .admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+  }
+  
+  .admin-dashboard table th,
+  .admin-dashboard table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    vertical-align: top;
+  }
+  
+  .admin-dashboard table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+ 
+  
+  .admin-dashboard table tr:hover {
+    transform: scale(1.01);
+    background-color:rgba(239, 234, 234, 0.902) ;
+  }
+  
+  .admin-dashboard table th,
+  .admin-dashboard table td {
+    padding: 10px;
+    word-wrap: break-word; 
+    white-space: normal;   
+  }
+  
+  .admin-dashboard table td button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .admin-dashboard table td button:hover {
+    background-color: #ddd;
+  }
+  
+  .admin-dashboard table td button:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+    width: 100px;
+  }
+  
+  .admin-dashboard table td button:first-of-type:hover {
+    background-color: #45a049;
+  }
+  
+  .admin-dashboard table td button:last-of-type {
+    background-color: #f44336; 
+    color: white;
+    width: 100px;
+  }
+  
+  .admin-dashboard table td button:last-of-type:hover {
+    background-color: #da190b;
+  }
+  

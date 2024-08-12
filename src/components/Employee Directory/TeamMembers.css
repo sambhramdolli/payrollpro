@@ -1,0 +1,88 @@
+.team-members-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(245, 61, 61, 0.829);
+  }
+  
+  .team-members-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to next line */
+    justify-content: space-between; /* Space out the items */
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: none; /* Remove default list style */
+    max-height: 400px; /* Limit height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%;
+  }
+  
+  .team-member-item {
+    flex: 0 48%; /* Each box takes up about half the width */
+    margin: 2% 0; /* Add margin for spacing */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+    width: 40%;
+    position: relative;
+  }
+  
+  .ag {
+    font-size: 25px;
+    text-align: center;
+    color: white;
+  }
+  
+  .member-profile-image {
+    width: 80px; /* Set a fixed size for profile images */
+    height: 80px;
+    border-radius: 50%; /* Make images circular */
+    margin-bottom: 10px; /* Space below the image */
+  }
+  
+  .add-button, .bak-button, .scroll-top-button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-button:hover, .bak-button:hover, .scroll-top-button:hover {
+    background-color: #0056b3; /* Darken on hover */
+  }
+  
+  .delete-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #cc0000;
+  }
+  
+  .add-team-member-form {
+    margin-top: 20px;
+  }
+  
+  .message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+  }

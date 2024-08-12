@@ -1,0 +1,85 @@
+/* Logout.css */
+
+.logout-container {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /* Set background color to white */
+}
+
+.logout-content {
+    background: linear-gradient(45deg, #8db3d1, #47229e);
+    width: 30%;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.button-container {
+    margin-right: 25%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    text-decoration: none;
+}
+
+.confirm-button, .back-button {
+    padding: 0.5rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.3s; /* Add hover transition */
+}
+.hgj{
+    margin-left: 30%;
+}
+
+.confirm-button {
+    width: 40%; /* Set width to 40% */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.bck-button {
+    width: 40%; /* Set width to 40% */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.confirm-button:hover {
+    background-color: #0056b3;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.link-button {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logout-success {
+    margin-top: 1rem;
+    color: green;
+    font-weight: bold;
+}

@@ -1,0 +1,91 @@
+/* Help.css */
+
+.help-menu {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(45deg, #8db3d1, #47229e);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    margin-right: 200px;
+}
+
+.help-menu h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.rfr{
+    margin-left: 0%;
+}
+
+.contact-info {
+    margin-top: 10px;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.btk-button {
+    margin-left: 40%;
+    width: 20%;
+    margin-top: 20px;
+    
+}
+
+.btk-button:hover {
+    background: #0056b3;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .help-menu {
+        padding: 15px;
+    }
+
+    .contact-info ul li {
+        font-size: 14px;
+    }
+
+    .back-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+.butt{
+    margin-right:900px;
+}

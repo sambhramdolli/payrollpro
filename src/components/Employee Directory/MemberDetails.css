@@ -1,0 +1,165 @@
+.member-details-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(245, 61, 61, 0.829);
+  }
+  .dd{
+    color: white;
+  }
+  .member-details {
+    margin-left: 10%;
+    width: 70%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 0.5s ease;
+  }
+  .gb{
+    margin-left: 35%;
+    color: white;
+  }
+  
+  @keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+  }
+  
+  .member-info {
+    margin-top: 10px;
+    animation: slideInLeft 0.5s ease;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+  
+  .member-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color:#333;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .edit-button,
+  .save-button,
+  .back-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: bounceIn 0.5s ease;
+  }
+  .dd{
+    margin-left: 35%;
+  }
+  .edit-button {
+    width: 13%;
+    background-color: #007bff;
+    margin-left: 5%;
+  }
+  
+  .save-button {
+    width: 13%;
+    background-color: #28a745;
+    margin-left: 5%;
+  }
+  
+  .bok-button {
+    margin-right: 5%;
+    width: 24%;
+    
+  }
+  
+  .edit-button:hover,
+  .save-button:hover,
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .save-button:hover {
+    background-color: #218838;
+  }
+  
+  .back-button:hover {
+    background-color: #5a6268;
+  }
+  
+  @keyframes bounceIn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+  }
+  
+  input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+  }

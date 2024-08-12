@@ -1,0 +1,50 @@
+
+
+.project-list, .project-details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px auto; /* Center the list by setting margin auto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Set a specific width for better centering */
+    background-color: rgb(20, 46, 124);
+    margin-right: 500px;
+}
+
+.project-list ul, .project-details ul {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+}
+
+.project-list li, .project-details li {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+    text-align: left; /* Align text to the left */
+}
+
+.project-list li:hover, .project-details li:hover {
+    background-color: #281883;
+}
+
+.k-button {
+    width: 10%;
+    margin-top: 10px;
+   margin-right: 35%;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.k-button:hover {
+    background-color: #0056b3;
+}
+.fd{
+    margin-left: 45%;
+    color: white;
+}
