@@ -12,7 +12,6 @@ import EmployeeSetting from './EmployeeSetting';
 import Employeehelp from './Employeehelp';
 import Employeelogout from './Employeelogout';
 import RaiseTicket from './Employee Tickets/Raiseticket';
-import Myticket from './Employee Tickets/Myticket';
 import Employeeclock from './Employeeclock';
 
 const Employee = () => {
@@ -43,7 +42,6 @@ const Employee = () => {
             <Route path="/employeehelp" element={<Employeehelp />} />
             <Route path="/employeelogout" element={<Employeelogout />} />
             <Route path="/raiseticket" element={<RaiseTicket addTicket={addTicket} />} />
-            <Route path="/myticket" element={<Myticket tickets={tickets} />} />
             <Route path="/clockin" element={<Employeeclock tickets={tickets} />} />
             <Route path="/" element={
               <div>
@@ -70,9 +68,6 @@ const Employee = () => {
                 </div>
                 <div className={`component ${selectedComponent === 'raiseticket' ? 'employee-slide employee-slide-in' : 'employee-slide'}`}>
                   {selectedComponent === 'raiseticket' && <RaiseTicket addTicket={addTicket} />}
-                </div>
-                <div className={`component ${selectedComponent === 'myticket' ? 'employee-slide employee-slide-in' : 'employee-slide'}`}>
-                  {selectedComponent === 'myticket' && <Myticket tickets={tickets} />}
                 </div>
                 <div className={`component ${selectedComponent === 'clockin' ? 'employee-slide employee-slide-in' : 'employee-slide'}`}>
                   {selectedComponent === 'clockin' && <Employeeclock tickets={tickets} />}

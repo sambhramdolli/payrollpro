@@ -1,45 +1,41 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+// src/components/Ticket.js
+import React, { useContext } from 'react';
+import { TicketContext } from '../contexts/TicketContext'; // Adjust the path as necessary
 import './Tickets.css';
-import { IoReturnDownBack } from "react-icons/io5";
 
-const Ticket = ({ tickets = [] }) => {  // Assign default value as an empty array
-    const ticketsContainerRef = useRef(null);
+const Ticket = () => {
+    const { tickets } = useContext(TicketContext);
 
-  const scrollToTop = () => {
-    if (ticketsContainerRef.current) {
-      ticketsContainerRef.current.scrollTop = 0;
-    }
-  };
-
-  return (
-    <div className="my-tickets">
-      <h1>My Tickets</h1>
-      <p className='sds'>Total Tickets: {tickets.length}</p>
-      <div className="tickets-container" ref={ticketsContainerRef}>
-        {tickets.map((ticket) => (
-          <div className="ticket-card" key={ticket.id}>
-            <p><strong>ID:</strong> {ticket.id}</p>
-            <p><strong>Support Team:</strong> {ticket.supportTeam}</p>
-            <p><strong>Reason:</strong> {ticket.reason}</p>
-            <p><strong>Priority:</strong> {ticket.priority}</p>
-            <p><strong>Description:</strong> {ticket.description}</p>
-            <p>
-              <strong>Attachment:</strong>{' '}
-              {ticket.attachment && (
-                <a href={`path/to/attachments/${ticket.attachment}`} download>
-                  {ticket.attachment}
-                </a>
-              )}
-            </p>
-          </div>
-        ))}
-      </div>
-      <Link to="/">
-        <button className="ba-button">Back</button>
-      </Link>
-    </div>
-  );
+    return (
+        <div className="ticket-container">
+            <div className="ticket-header">
+                <h1>Tickets</h1>
+            </div>
+            {tickets.length > 0 ? (
+                tickets.map((ticket, index) => (
+                    <div key={index} className="ticket-card">
+                        <h2>{ticket.title}</h2>
+                        <p><strong>Description:</strong> {ticket.description}</p>
+                        <p><strong>Priority:</strong> {ticket.priority}</p>
+                        <p><strong>Location:</strong> {ticket.location}</p>
+                        <p><strong>Support Team:</strong> {ticket.supportTeam}</p>
+                        {ticket.file && (
+                            <p>
+                                <strong>Attached File:</strong> 
+                                <a href={URL.createObjectURL(ticket.file)} target="_blank" rel="noopener noreferrer">
+                                    {ticket.file.name}
+                                </a>
+                            </p>
+                        )}
+                    </div>
+                ))
+            ) : (
+                <p>No tickets available</p>
+            )}
+        </div>
+    );
 };
 
 export default Ticket;
+
+

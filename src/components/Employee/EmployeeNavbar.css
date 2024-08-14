@@ -93,23 +93,32 @@ body {
   margin-right: 10px;
 }
 
-.col {
-  color: white;
-  font-size: 50px;
-  margin: 5px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.gd {
-  color: #ddd;
-  font-size: 25px;
-}
 
 .clock-in-icon {
   width: 50px; /* Adjust the size as needed */
   height: 50px;
   cursor: pointer;
   margin-right: 50px; /* Adjust the spacing if necessary */
-  margin-top: 8px;
+  margin-top: 5px;
+}
+
+.menu12 {
+  background-color: rgb(7, 10, 92);
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+
+
+.raise-ticket{
+  margin-right: 50px;
+  margin-top: 12px;
+  padding: 10px 20px;
 }

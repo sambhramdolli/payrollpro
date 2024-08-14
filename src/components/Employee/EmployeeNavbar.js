@@ -63,25 +63,13 @@ const EmployeeNavBar = ({ onButtonClick }) => {
         {/* Team Dropdown */}
         
 
-        {/* Ticket Dropdown */}
-        <div className="profile-icon" onClick={() => toggleDropdown('ticket')} ref={dropdownRefs.ticket}>
-          <div className='ticket1'>
-            <p className='gd'>Raise Tickets</p>
-            <RiArrowDropDownLine className='col' />
-          </div>
-          {dropdownVisible.ticket && (
-            <div className='aa'>
-              <div className="dropdown-menu2">
-              <button className="menu12" onClick={() => onButtonClick('raiseticket')}>
-                Raise Ticket
-              </button>
-              <button className="menu12" onClick={() => onButtonClick('myticket')}>
-                My Ticket
-              </button>
-              </div>
+        {/* Raise Ticket Button */}
+        <div className="raise-ticket" onClick={() => onButtonClick('raiseticket')}>
+          <button className="menu12">
+            Raise Ticket
+            </button>
             </div>
-          )}
-        </div>
+
 
         {/* Clock In Button */}
         <div className="clock-in-icon" onClick={() => onButtonClick('clockin')}>

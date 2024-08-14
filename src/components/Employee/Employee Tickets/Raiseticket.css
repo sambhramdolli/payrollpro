@@ -1,129 +1,56 @@
-.submit-ticket {
-    padding: 20px;
-    background: linear-gradient(50deg, #4f6857, #3714b6);
+/* src/components/Raiseticket.css */
+
+.raise-ticket-container {
+    border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(17, 17, 17, 0.863);
-    position: relative;
-    overflow: hidden;
-    z-index: 1; /* Ensure content is above the background */
-    width: 50%;
-    margin-right: 500px;
-    height: 70vh;
-    overflow-y: auto;
+    padding: 16px;
+    width: 60%;
+    margin-right: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fefefe;
+    overflow-y: auto; /* Add scrolling if content exceeds container height */
+    height: 70vh; /* Limit height to allow scrolling */
 }
 
-.submit-ticket::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(#47229e); /* Sliding background gradient */
-    z-index: -1; /* Position behind the content */
-}
-
-h1 {
+.raise-ticket-container h2 {
     text-align: center;
-    color: white; /* White text color for heading */
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
-.gf{
-    color:white;
+.raise-ticket-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
+.raise-ticket-container label {
     font-weight: bold;
-    margin-bottom: 5px;
-    color: rgb(236, 232, 232); /* White text color for labels */
 }
 
-input[type="text"],
-select,
-textarea,
-input[type="file"] {
+.raise-ticket-container input[type="text"],
+.raise-ticket-container textarea,
+.raise-ticket-container select {
     width: 100%;
     padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 4px;
 }
 
-textarea {
-    height: 100px;
+.raise-ticket-container input[type="file"] {
+    padding: 8px;
 }
 
-button {
-    padding: 10px 15px;
+.raise-ticket-container button {
+    padding: 12px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-}
-
-.submit-button {
     background-color: #007bff;
-    color: white;
-    width:10%;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.subm-button:hover {
+.raise-ticket-container button:hover {
     background-color: #0056b3;
-    margin-right: 10%;
-}
-
-.canc-button {
-    width:10%;
-    color: white;
-    transition: background-color 0.3s;
-    margin-left: 70%;
-}
-
-.cancel-button:hover {
-    background-color: #c82333;
-}
-
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    width: 95%;
-    margin-right: 20px;
-}
-
-.half-width {
-    flex: 1;
-   
-}
-
-.button-group {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-
-
-.hnb {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 25%;
-}
-
-.notification {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
 }
