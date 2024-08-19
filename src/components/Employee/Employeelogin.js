@@ -24,13 +24,13 @@ const EmployeeLoginPage = () => {
           <div className="custom-form-logo">
             <img src={yourLogo} alt="Your Logo" className="custom-your-logo" />
           </div>
-          <h2>Custom Login</h2>
+          <h1 className='log-in'>Login</h1> 
           <div className="custom-form-group">
-            <label htmlFor="email">Email:</label>
+            <label className='email-emp' htmlFor="email">Email:</label>
             <input type="email" id="email" name="email" required />
           </div>
           <div className="custom-form-group">
-            <label htmlFor="password">Password:</label>
+            <label className='email-emp'htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" required />
           </div>
           <button type="button" className="custom-forgot-password-button">Forgot password?</button>

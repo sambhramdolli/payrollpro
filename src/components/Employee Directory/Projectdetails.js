@@ -14,7 +14,7 @@ const Projectdetails = ({ projectId, onBack }) => {
                     { id: '1-0', role: 'Frontend Team', names: ['Alice', 'Bob', 'Charlie', 'Dave', 'Eva', 'Frank', 'Grace'] },
                     { id: '1-1', role: 'Backend Team', names: ['Henry', 'Ivy'] },
                     { id: '1-2', role: 'Testing Team', names: ['Jack', 'Lily'] },
-                    { id: '1-3', role: 'Devops Team', names: ['rudresh', 'karthik'] },
+                    { id: '1-3', role: 'DevOps Team', names: ['Rudresh', 'Karthik'] },
                 ],
                 2: [
                     { id: '2-0', role: 'Support Team', names: ['Mia', 'Noah'] },
@@ -48,11 +48,11 @@ const Projectdetails = ({ projectId, onBack }) => {
     };
 
     return (
-        <div className="project-details-container">
-            <h2 className='bg'>Project Team Members</h2>
-            <div className="team-container">
+        <div className="project-details-wrapper">
+            <h2 className="project-details-header">Project Team Members</h2>
+            <div className="project-details-teams">
                 {teamMembers.map((team, index) => (
-                    <div key={index} className="team-leader-box1">
+                    <div key={index} className="project-team-box">
                         <h3>{team.role} ({team.names.length})</h3>
                         <ul>
                             {team.names.map((name, idx) => {
@@ -69,20 +69,22 @@ const Projectdetails = ({ projectId, onBack }) => {
             </div>
 
             {selectedMemberDetails && (
-                <div className="member-details-container">
+                <div className="project-member-details">
                     <h2>Member Details</h2>
-                    <div className="member-details">
-                        <img src={selectedMemberDetails.profileImage} alt={`${selectedMemberDetails.name}'s profile`} className="profile-image" />
-                        <div className="member-info">
+                    <div className="project-member-info">
+                        <img src={selectedMemberDetails.profileImage} alt={`${selectedMemberDetails.name}'s profile`} className="project-profile-image" />
+                        <div className="project-member-text">
                             <p><strong>Name:</strong> {selectedMemberDetails.name}</p>
                             <p><strong>Age:</strong> {selectedMemberDetails.age}</p>
                             <p><strong>Qualification:</strong> {selectedMemberDetails.qualification}</p>
                             <p><strong>Address:</strong> {selectedMemberDetails.address}</p>
                         </div>
                     </div>
-                    <button className="bac-button" onClick={handleBack}>Back</button>
+                    <button className="project-back-button" onClick={handleBack}>Back</button>
                 </div>
             )}
+            {/* Ensuring the button is at the bottom */}
+            <button className="project-back-button-bottom" onClick={handleBack}>Back</button>
         </div>
     );
 };

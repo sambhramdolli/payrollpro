@@ -91,7 +91,7 @@
   text-decoration: underline;
   cursor: pointer;
   margin-top: -15%;
-  margin-left: -39.8%;
+  margin-left: -75.8%;
 }
 
 .custom-create-new-button {
@@ -123,6 +123,12 @@
 
 .custom-logout-button:hover {
   background-color: #d32f2f;
+}
+.log-in{
+  color: black;
+}
+.email-emp{
+  color: black;
 }
 
 .custom-your-logo {

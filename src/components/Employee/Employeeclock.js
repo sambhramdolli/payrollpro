@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './Employeeclock.css';
@@ -12,6 +13,8 @@ const Atta = () => {
   const [history, setHistory] = useState({});
   const [displayHistory, setDisplayHistory] = useState([]);
   const [viewDetails, setViewDetails] = useState(false);
+
+  const navigate = useNavigate(); // Initialize navigate function
 
   const employeeDetails = {
     id: 'SS0022',
@@ -129,12 +132,7 @@ const Atta = () => {
   };
 
   const handleBack = () => {
-    if (viewDetails) {
-      setViewDetails(false);
-    } else {
-      // Implement the navigation logic here, for example:
-      window.history.back();
-    }
+    navigate(0); // Navigate back in history
   };
 
   return (
@@ -142,11 +140,10 @@ const Atta = () => {
       <div className="app-header">
         <h1>Attendance</h1>
         <div className="date-picker-container">
-        <span className="calendar-icon">📅</span>
+          <span className="calendar-icon">📅</span>
           <DatePicker
             selected={selectedDate}
             onChange={(date) => setSelectedDate(date)}
-            
             dateFormat="MM/dd/yyyy"
             className="date-picker"
           />
@@ -163,11 +160,17 @@ const Atta = () => {
             <p>Contact Number: {employeeDetails.number}</p>
             <button className="download-btn" onClick={downloadReport}>Download Report</button>
           </div>
+
           <div className="history-list">
-            {displayHistory.map((entry, index) => (
-              <p key={index}>{entry.type} at {formatTime(new Date(entry.time))}</p>
-            ))}
+            {displayHistory.length > 0 ? (
+              displayHistory.map((entry, index) => (
+                <p key={index}>{entry.type} at {formatTime(new Date(entry.time))}</p>
+              ))
+            ) : (
+              <p>No data found</p>
+            )}
           </div>
+        
           <button className="back-btn" onClick={handleBack}>Back</button>
         </div>
       ) : (

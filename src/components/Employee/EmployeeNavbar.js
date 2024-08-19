@@ -12,19 +12,11 @@ const EmployeeNavBar = ({ onButtonClick }) => {
   const [dropdownVisible, setDropdownVisible] = useState({
     profile: false,
     ticket: false,
-    team: false,
-    recruitment: false,
-    training: false,
-    attendance: false,
   });
 
   const dropdownRefs = {
     profile: useRef(null),
     ticket: useRef(null),
-    team: useRef(null),
-    recruitment: useRef(null),
-    training: useRef(null),
-    attendance: useRef(null),
   };
 
   const toggleDropdown = (type) => {
@@ -54,52 +46,57 @@ const EmployeeNavBar = ({ onButtonClick }) => {
   }, [dropdownVisible]);
 
   return (
-    <nav className="navbar">
-      <div className="logo-container">
-        <img src={img1} alt="Logo" className='logo' />
+    <nav className="employee-navbar">
+      <div className="employee-navbar__logo-container">
+        <img src={img1} alt="Logo" className='employee-navbar__logo' />
       </div>
 
-      <div className='nav'>
-        {/* Team Dropdown */}
-        
-
-        {/* Raise Ticket Button */}
-        <div className="raise-ticket" onClick={() => onButtonClick('raiseticket')}>
-          <button className="menu12">
-            Raise Ticket
-            </button>
+      <div className='employee-navbar__nav'>
+        {/* Ticket Dropdown */}
+        <div className="employee-navbar__ticket-icon" onClick={() => toggleDropdown('ticket')} ref={dropdownRefs.ticket}>
+          <div className='employee-navbar__ticket-text'>
+            <p className='employee-navbar__dropdown-label'>Raise Tickets</p>
+            <RiArrowDropDownLine className='employee-navbar__dropdown-icon' />
+          </div>
+          {dropdownVisible.ticket && (
+            <div className='employee-navbar__ticket-dropdown'>
+              <div className="employee-navbar__ticket-menu">
+                <button className="employee-navbar__ticket-item" onClick={() => onButtonClick('raiseticket')}>
+                  Raise Ticket
+                </button>
+              </div>
             </div>
-
-
-        {/* Clock In Button */}
-        <div className="clock-in-icon" onClick={() => onButtonClick('clockin')}>
-          <img src="https://img.icons8.com/?size=100&id=82767&format=png&color=FFFFFF" alt="Clock In" className='clock-in-icon' />
+          )}
         </div>
 
+        {/* Clock In Button */}
+        <div className="employee-navbar__clock-in" onClick={() => onButtonClick('clockin')}>
+          <img src="https://img.icons8.com/?size=100&id=82767&format=png&color=FFFFFF" alt="Clock In" className='employee-navbar__clock-in-icon' />
+        </div>
 
         {/* Profile Dropdown */}
-        <div className="profile-icon" onClick={() => toggleDropdown('profile')} ref={dropdownRefs.profile}>
-          <img src={img2} alt="Profile" />
+        <div className="employee-navbar__profile-icon" onClick={() => toggleDropdown('profile')} ref={dropdownRefs.profile}>
+          <img src={img2} alt="Profile" className="employee-navbar__profile-image" />
           {dropdownVisible.profile && (
-            <div className="dropdown-menu">
-              <button className="menu1" onClick={() => onButtonClick('myProfile')}>
-                <IoIosPersonAdd className='icon' />
+            <div className="employee-navbar__profile-dropdown">
+              <button className="employee-navbar__profile-item" onClick={() => onButtonClick('myProfile')}>
+                <IoIosPersonAdd className='employee-navbar__icon' />
                 My Profile
               </button>
-              <button className="menu1" onClick={() => onButtonClick('employeeresignation')}>
-                <FaPrescription className='icon' />
+              <button className="employee-navbar__profile-item" onClick={() => onButtonClick('employeeresignation')}>
+                <FaPrescription className='employee-navbar__icon' />
                 Resignation
               </button>
-              <button className="menu1" onClick={() => onButtonClick('employeesetting')}>
-                <IoSettings className='icon' />
+              <button className="employee-navbar__profile-item" onClick={() => onButtonClick('employeesetting')}>
+                <IoSettings className='employee-navbar__icon' />
                 Settings
               </button>
-              <button className="menu1" onClick={() => onButtonClick('employeehelp')}>
-                <FaHandsHelping className='icon' />
+              <button className="employee-navbar__profile-item" onClick={() => onButtonClick('employeehelp')}>
+                <FaHandsHelping className='employee-navbar__icon' />
                 Help
               </button>
-              <button className="menu1" onClick={() => onButtonClick('employeelogout')}>
-                <RiLogoutCircleFill className='icon' />
+              <button className="employee-navbar__profile-item" onClick={() => onButtonClick('employeelogout')}>
+                <RiLogoutCircleFill className='employee-navbar__icon' />
                 Logout
               </button>
             </div>
@@ -111,4 +108,3 @@ const EmployeeNavBar = ({ onButtonClick }) => {
 };
 
 export default EmployeeNavBar;
-

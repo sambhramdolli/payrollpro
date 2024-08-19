@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Teamlead.css';
 
 const TeamLead = ({ onTeamClick }) => {
@@ -7,7 +8,7 @@ const TeamLead = ({ onTeamClick }) => {
       teamLeader: "Kamal",
       age: 31,
       qualification: "Computer Science",
-      profileImage: "/my.png",
+      profileImage: "/assets/profile.png",
       teamMembers: [
         { id: 1, name: "Naveed", age: 22, qualification: "Computer Science", profileImage: "/my.png" },
         { id: 2, name: "Sharath", age: 23, qualification: "MCA", profileImage: "/my.png" },
@@ -26,21 +27,26 @@ const TeamLead = ({ onTeamClick }) => {
     teamLeader: '',
     age: '',
     qualification: '',
-    profileImage: '/my.png',
+    profileImage: 'my.png',
     teamMembers: [],
   });
 
   const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
   const teamListRef = useRef(null);
 
   const handleTeamLeaderClick = (team) => {
-    onTeamClick('teammembers', team); // Call the function passed as a prop with 'teammembers' and team data
+    onTeamClick('teammembers', team);
   };
 
   const scrollToTop = () => {
     if (teamListRef.current) {
       teamListRef.current.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleBack = () => {
+    navigate(0);
   };
 
   const handleInputChange = (e) => {
@@ -67,12 +73,12 @@ const TeamLead = ({ onTeamClick }) => {
 
   const handleAddTeamLeader = (e) => {
     e.preventDefault();
-    setTeamData((prevData) => [newLeader, ...prevData]); // Add new leader at the beginning
+    setTeamData((prevData) => [newLeader, ...prevData]);
     setNewLeader({
       teamLeader: '',
       age: '',
       qualification: '',
-      profileImage: '/my.png',
+      profileImage: 'my.png',
       teamMembers: [],
     });
     setShowForm(false);
@@ -80,63 +86,67 @@ const TeamLead = ({ onTeamClick }) => {
 
   const toggleFormVisibility = () => {
     setShowForm(!showForm);
+    scrollToTop(); // Scroll to top when form is shown
   };
 
   return (
-    <div className="teamlead-container">
-      <h2>Team Leaders</h2>
-      <button className="add-team-leader-button" onClick={toggleFormVisibility}>
-        {showForm ? 'Hide Form' : 'Add Team Leader'}
-      </button>
-
+    <div className="team-container1">
       {showForm && (
-        <form className="team-leader-form" onSubmit={handleAddTeamLeader}>
+        <form className="add-team-leader-form1" onSubmit={handleAddTeamLeader}>
+          <h3>Add New Team Leader</h3>
           <input
             type="text"
             name="teamLeader"
-            placeholder="Name"
             value={newLeader.teamLeader}
             onChange={handleInputChange}
+            placeholder="Name"
             required
           />
           <input
             type="number"
             name="age"
-            placeholder="Age"
             value={newLeader.age}
             onChange={handleInputChange}
+            placeholder="Age"
             required
           />
           <input
             type="text"
             name="qualification"
-            placeholder="Qualification"
             value={newLeader.qualification}
             onChange={handleInputChange}
+            placeholder="Qualification"
             required
           />
           <input
             type="file"
+            name="profileImage"
             accept="image/*"
             onChange={handleImageChange}
+            required
           />
-          <button type="submit">Add Team Leader</button>
+          <button type="submit">Add</button>
         </form>
       )}
-
-      <div className="team-leaders-list" ref={teamListRef}>
+      <h2 className='team-title'>Team Leaders</h2>
+      <div ref={teamListRef} className="team-leaders-list1">
         {teamData.map((team, index) => (
-          <div key={index} className="team-leader-card" onClick={() => handleTeamLeaderClick(team)}>
-            <img src={team.profileImage} alt={`${team.teamLeader}'s profile`} />
-            <h3>{team.teamLeader}</h3>
-            <p>Age: {team.age}</p>
-            <p>Qualification: {team.qualification}</p>
+          <div key={index} className="team-leader-box1" onClick={() => handleTeamLeaderClick(team)}>
+            <img src={team.profileImage} className="profile-image1" alt="Team Leader" />
+            <div className="team-leader-info1">
+              <p>Name: {team.teamLeader}</p>
+              <p>Age: {team.age}</p>
+              <p>Qualification: {team.qualification}</p>
+            </div>
           </div>
         ))}
       </div>
-      <button onClick={scrollToTop} className="scroll-to-top-button">
-        Scroll to Top
-      </button>
+      
+        <button className="add-button1" onClick={toggleFormVisibility}>
+          {showForm ? 'Close Form' : 'Add Team Leader'}
+        </button>
+        <button className="back-button1" onClick={handleBack}>Back</button>
+      
     </div>
   );
 };

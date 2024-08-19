@@ -88,7 +88,7 @@ const EmployeeSetting = () => {
   };
 
   const handleBack = () => {
-    navigate('/');
+    navigate(0);
   };
 
   const handleSearch = (e) => {
@@ -189,7 +189,7 @@ const EmployeeSetting = () => {
           )}
         </div>
         
-          <button className="bk-button" onClick={handleBack}>back</button>
+          <button className="bk-button" onClick={handleBack}>Back</button>
         
       </div>
     </div>

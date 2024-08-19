@@ -75,10 +75,15 @@ const LeaveApplication = () => {
     });
   };
 
+  const handleBack = () => {
+    // Handle the back button functionality here
+    // For example, navigate back to the previous page or view
+  };
+
   return (
-    <div className="leave-application">
+    <div className="leave-application-admin">
       <div className="leave-form-container">
-        <h2>Leave Application</h2>
+        <h1 className='Leave'>Leave Application</h1>
         <form className="leave-form" onSubmit={handleSubmit}>
           <label>
             Type of leave
@@ -123,19 +128,23 @@ const LeaveApplication = () => {
             Attach File
             <input type="file" onChange={handleFileChange} />
           </label>
-          <button type="submit">Apply Leave</button>
+          <div>
+            <button className='button-apply' type="submit">Apply Leave</button>
+            {/* <button className='button-back' type="button" onClick={handleBack}>Back</button> */}
+          </div>
+
         </form>
       </div>
       <div className="leave-info-container">
         <div className="remaining-leaves">
-          <h2>Your Overview</h2>
+          <h1  className='Leave'>Your Overview</h1>
           <div className="leave-overview">
             <div className="leave-entitlement">
-              <h3>Total Leaves</h3>
+              <h3  className='Leave'>Total Leaves</h3>
               <p className="leave-days">{totalLeaves.sick + totalLeaves.casual}</p>
             </div>
             <div className="leave-entitlement">
-              <h3>Remaining Leaves</h3>
+              <h3  className='Leave'>Remaining Leaves</h3>
               <p className="leave-days">{remainingLeaves.sick + remainingLeaves.casual}</p>
             </div>
           </div>
@@ -145,7 +154,7 @@ const LeaveApplication = () => {
         </div>
         {showMore && (
           <div className="leave-availability">
-            <h2>Leave Availability</h2>
+            <h1 className='Leave'>Leave Availability</h1>
             <div className="leave-types">
               <div className="leave-type">
                 <h3>Sick Leaves</h3>
@@ -161,7 +170,7 @@ const LeaveApplication = () => {
           </div>
         )}
         <div className="leave-info">
-          <h2>Leave Information</h2>
+          <h1 className='Leave'>Leave Information</h1>
           <table>
             <thead>
               <tr>

@@ -69,7 +69,7 @@ function EmployeeResignation() {
   };
 
   const handleBack = () => {
-    navigate('/');
+    navigate(0);
   };
 
   const handleStatusCheck = async () => {
@@ -110,7 +110,7 @@ function EmployeeResignation() {
         
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="reasonForLeaving">Reason for Leaving:</label>
+              <h3><label htmlFor="reasonForLeaving">Reason for Leaving:</label></h3>
               <textarea
                 id="reasonForLeaving"
                 value={reasonForLeaving}

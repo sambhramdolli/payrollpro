@@ -1,12 +1,12 @@
 /* Resignation.css */
 .form-container12, .status-page {
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
   border-radius: 8px;
   background-color: rgb(7, 10, 92);
-  margin-right: 600px;
+  margin-right: 900px;
 }
 
 .thg {
@@ -32,6 +32,7 @@ textarea#reasonForLeaving {
   box-sizing: border-box;
   background-color: #f8f9fa;
 }
+
 
 .form-buttons {
   display: flex;

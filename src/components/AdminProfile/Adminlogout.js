@@ -1,38 +1,41 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { IoReturnDownBackOutline } from "react-icons/io5";
 import './Adminlogout.css';
 
-const Logout = () => {
+const AdminLogout = () => {
     const [logoutSuccess, setLogoutSuccess] = useState(false);
     const navigate = useNavigate();
 
     const handleConfirmLogout = () => {
-        // Implement logout logic here
         console.log('Logging out...'); // Placeholder for actual logout logic
         setLogoutSuccess(true);
         setTimeout(() => {
             navigate('/'); // Redirect to home page after a delay
-        }, 2000); // 2 second delay before redirecting
+        }, 2000); // 2-second delay before redirecting
+    };
+
+    const handleCancel = () => {
+        navigate(0); // Redirect to home page immediately
     };
 
     return (
-        <div className="logout-container">
-            <div className="logout-content">
-                <h2 className='hgj'>Confirm Logout</h2>
-                <p>Are you sure you want to logout?</p>
-                <div className="button-container">
-                    <button className="confirm-button" onClick={handleConfirmLogout}>
+        <div 
+            className="admin-logout-container">
+            <div className="admin-logout-content">
+                <h2 className='admin-logout-title'>Confirm Logout</h2>
+                <p className="admin-logout-message">Are you sure you want to logout?</p>
+                <div className="admin-button-container">
+                    <button className="admin-confirm-button" onClick={handleConfirmLogout}>
                         Logout
                     </button>
-                    <button className="bck-button">
-                        <Link to="/" className="link-button">cancel</Link>
+                    <button className="admin-cancel-button" onClick={handleCancel}>
+                    Cancel  
                     </button>
                 </div>
-                {logoutSuccess && <p className="logout-success">Logout successful!</p>}
+                {logoutSuccess && <p className="admin-logout-success">Logout successful!</p>}
             </div>
         </div>
     );
 };
 
-export default Logout;
+export default AdminLogout;

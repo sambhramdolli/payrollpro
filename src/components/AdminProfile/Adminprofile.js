@@ -1,184 +1,126 @@
 import React, { useState } from 'react';
-import '../AdminProfile/Adminprofile.css';
+import './Adminprofile.css';
+import { useNavigate } from 'react-router-dom';
+import img2 from "../../assets/profile.png"; 
 
-const MyProfile = () => {
-  const [profileData, setProfileData] = useState({
-    personalNumber: '',
-    personalEmail: '',
-    bloodGroup: '',
-    maritalStatus: '',
-    nationality: '',
-    permanentAddress: '',
-    currentAddress: '',
-    fullName: '',
-    employeeId: '',
-    workEmail: '',
-    workNumber: '',
-    previousJobTitle: '',
-    previousCompany: '',
-    totalExperience: '',
-    highestQualification: '',
-    linkedIn: '',
-    certifications: '',
-    skills: ''
+function Myprofile() {
+  const navigate = useNavigate();
+  const [isEditing, setIsEditing] = useState(false);
+  const [employeeInfo, setEmployeeInfo] = useState({
+    fullName: 'John Doe',
+    employeeId: '123456',
+    emailId: 'john.doe@example.com',
+    personalNumber: '9876543210',
+    personalName: 'John Doe',
+    bloodGroup: 'O+',
+    nationality: 'American',
+    state: 'California',
+    permanentAddress: '1234 Elm Street, Springfield, CA',
+    currentAddress: '5678 Oak Street, Springfield, CA',
+    emergencyContact: {
+      name: 'Jane Doe',
+      mobileNumber: '1234567890',
+      address: '1234 Elm Street, Springfield, CA',
+      relation: 'Wife'
+    },
+    professionalBackground: {
+      jobTitle: 'Software Engineer',
+      companyName: 'Tech Company',
+      educationQualification: 'B.Sc in Computer Science',
+      certification: 'Certified Java Developer',
+      skills: ['React', 'JavaScript', 'CSS'],
+      socialMedia: {
+        linkedin: 'https://www.linkedin.com/in/johndoe',
+        twitter: 'https://www.twitter.com/johndoe'
+      }
+    }
   });
 
-  const [editState, setEditState] = useState({
-    personal: false,
-    employee: false,
-    background: false
-  });
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProfileData({ ...profileData, [name]: value });
+    setEmployeeInfo((prevInfo) => ({
+      ...prevInfo,
+      [name]: value
+    }));
   };
 
-  const handleEdit = (section) => {
-    setEditState({ ...editState, [section]: !editState[section] });
-  };
+  const renderInput = (label, value, name) => (
+    <div className="input-group">
+      <label>{label}</label>
+      {isEditing ? (
+        <input type="text" name={name} value={value} onChange={handleChange} />
+      ) : (
+        <p>{value}</p>
+      )}
+    </div>
+  );
 
-  const handleSubmit = (section, e) => {
-    e.preventDefault();
-    console.log(`Profile Data for ${section} Submitted:`, profileData);
-    setEditState({ ...editState, [section]: false });
+  const handleBack = () => {
+    navigate(0);
   };
 
   return (
-    <div className="profile-container">
-      {/* Personal Information Section */}
-      <div className="profile-section">
-        <h2>Personal Information</h2>
-        {editState.personal ? (
-          <form onSubmit={(e) => handleSubmit('personal', e)}>
-            <div className="info-item">
-              <label>Personal Number</label>
-              <input type="text" name="personalNumber" value={profileData.personalNumber} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Personal Email</label>
-              <input type="email" name="personalEmail" value={profileData.personalEmail} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Blood Group</label>
-              <input type="text" name="bloodGroup" value={profileData.bloodGroup} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Marital Status</label>
-              <input type="text" name="maritalStatus" value={profileData.maritalStatus} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Country of Nationality</label>
-              <input type="text" name="nationality" value={profileData.nationality} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Permanent Address</label>
-              <input type="text" name="permanentAddress" value={profileData.permanentAddress} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Current Address</label>
-              <input type="text" name="currentAddress" value={profileData.currentAddress} onChange={handleChange} />
-            </div>
-            <button type="submit" className="save-button">Save</button>
-          </form>
-        ) : (
-          <div className="info-display">
-            <p><strong>Personal Number:</strong> {profileData.personalNumber}</p>
-            <p><strong>Personal Email:</strong> {profileData.personalEmail}</p>
-            <p><strong>Blood Group:</strong> {profileData.bloodGroup}</p>
-            <p><strong>Marital Status:</strong> {profileData.maritalStatus}</p>
-            <p><strong>Nationality:</strong> {profileData.nationality}</p>
-            <p><strong>Permanent Address:</strong> {profileData.permanentAddress}</p>
-            <p><strong>Current Address:</strong> {profileData.currentAddress}</p>
-            <button onClick={() => handleEdit('personal')} className="edit-button">Edit</button>
+    <div className="admin-profile">
+      <div className="admin-profile-content">
+        <div className="admin-left-section">
+          <div className="admin-profile-section">
+            <h2 className='admin-profile-info'>About Information</h2>
+            {renderInput('Full Name:', employeeInfo.fullName, 'fullName')}
+            {renderInput('Employee ID:', employeeInfo.employeeId, 'employeeId')}
+            {renderInput('Email ID:', employeeInfo.emailId, 'emailId')}
           </div>
-        )}
-      </div>
-
-      {/* Employee Information Section */}
-      <div className="profile-section">
-        <h2>Employee Information</h2>
-        {editState.employee ? (
-          <form onSubmit={(e) => handleSubmit('employee', e)}>
-            <div className="info-item">
-              <label>Full Name</label>
-              <input type="text" name="fullName" value={profileData.fullName} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Employee ID</label>
-              <input type="text" name="employeeId" value={profileData.employeeId} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Work Email</label>
-              <input type="email" name="workEmail" value={profileData.workEmail} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Work Number</label>
-              <input type="text" name="workNumber" value={profileData.workNumber} onChange={handleChange} />
-            </div>
-            <button type="submit" className="save-button">Save</button>
-          </form>
-        ) : (
-          <div className="info-display">
-            <p><strong>Full Name:</strong> {profileData.fullName}</p>
-            <p><strong>Employee ID:</strong> {profileData.employeeId}</p>
-            <p><strong>Work Email:</strong> {profileData.workEmail}</p>
-            <p><strong>Work Number:</strong> {profileData.workNumber}</p>
-            <button onClick={() => handleEdit('employee')} className="edit-button">Edit</button>
+          <div className="admin-profile-section">
+            <h2 className='admin-profile-info'>Personal Information</h2>
+            {renderInput('Personal Number:', employeeInfo.personalNumber, 'personalNumber')}
+            {renderInput('Personal Name:', employeeInfo.personalName, 'personalName')}
+            {renderInput('Blood Group:', employeeInfo.bloodGroup, 'bloodGroup')}
+            {renderInput('Nationality:', employeeInfo.nationality, 'nationality')}
+            {renderInput('State:', employeeInfo.state, 'state')}
+            {renderInput('Permanent Address:', employeeInfo.permanentAddress, 'permanentAddress')}
+            {renderInput('Current Address:', employeeInfo.currentAddress, 'currentAddress')}
           </div>
-        )}
-      </div>
-
-      {/* Personal and Academic Background Section */}
-      <div className="profile-section">
-        <h2>Personal and Academic Background</h2>
-        {editState.background ? (
-          <form onSubmit={(e) => handleSubmit('background', e)}>
-            <div className="info-item">
-              <label>Previous Job Title</label>
-              <input type="text" name="previousJobTitle" value={profileData.previousJobTitle} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Previous Company</label>
-              <input type="text" name="previousCompany" value={profileData.previousCompany} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Total Experience (years)</label>
-              <input type="text" name="totalExperience" value={profileData.totalExperience} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Highest Qualification</label>
-              <input type="text" name="highestQualification" value={profileData.highestQualification} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>LinkedIn Profile</label>
-              <input type="text" name="linkedIn" value={profileData.linkedIn} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Certifications</label>
-              <input type="text" name="certifications" value={profileData.certifications} onChange={handleChange} />
-            </div>
-            <div className="info-item">
-              <label>Skills</label>
-              <input type="text" name="skills" value={profileData.skills} onChange={handleChange} />
-            </div>
-            <button type="submit" className="save-button">Save</button>
-          </form>
-        ) : (
-          <div className="info-display">
-            <p><strong>Previous Job Title:</strong> {profileData.previousJobTitle}</p>
-            <p><strong>Previous Company:</strong> {profileData.previousCompany}</p>
-            <p><strong>Total Experience:</strong> {profileData.totalExperience} years</p>
-            <p><strong>Highest Qualification:</strong> {profileData.highestQualification}</p>
-            <p><strong>LinkedIn Profile:</strong> <a href={profileData.linkedIn} target="_blank" rel="noopener noreferrer">{profileData.linkedIn}</a></p>
-            <p><strong>Certifications:</strong> {profileData.certifications}</p>
-            <p><strong>Skills:</strong> {profileData.skills}</p>
-            <button onClick={() => handleEdit('background')} className="edit-button">Edit</button>
+          <div className="admin-profile-section">
+            <h2 className='admin-profile-info'>Emergency Contact Details</h2>
+            {renderInput('Contact Name:', employeeInfo.emergencyContact.name, 'emergencyContact.name')}
+            {renderInput('Mobile Number:', employeeInfo.emergencyContact.mobileNumber, 'emergencyContact.mobileNumber')}
+            {renderInput('Address:', employeeInfo.emergencyContact.address, 'emergencyContact.address')}
+            {renderInput('Relation:', employeeInfo.emergencyContact.relation, 'emergencyContact.relation')}
           </div>
-        )}
+        </div>
+        <div className="admin-right-section">
+        <div className="admin-profile-image">
+            <img src={img2} alt="Profile" />
+          </div>
+          <div className="admin-profile-section">
+            <h2 className='admin-profile-info'>Professional Background</h2>
+            {renderInput('Job Title:', employeeInfo.professionalBackground.jobTitle, 'professionalBackground.jobTitle')}
+            {renderInput('Company Name:', employeeInfo.professionalBackground.companyName, 'professionalBackground.companyName')}
+            {renderInput('Education Qualification:', employeeInfo.professionalBackground.educationQualification, 'professionalBackground.educationQualification')}
+            {renderInput('Certification:', employeeInfo.professionalBackground.certification, 'professionalBackground.certification')}
+            {renderInput('Skills:', employeeInfo.professionalBackground.skills.join(', '), 'professionalBackground.skills')}
+            <div className="social-media1">
+              <label>Social Media</label>
+              <ul>
+                <li>
+                  <a href={employeeInfo.professionalBackground.socialMedia.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </li>
+                <li>
+                  <a href={employeeInfo.professionalBackground.socialMedia.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+      
+        <button className="admin-profile-button" onClick={handleBack}>Back</button>
+      
     </div>
   );
 }
 
-export default MyProfile;
+export default Myprofile;

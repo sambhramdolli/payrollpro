@@ -13,6 +13,7 @@ import Employeehelp from './Employeehelp';
 import Employeelogout from './Employeelogout';
 import RaiseTicket from './Employee Tickets/Raiseticket';
 import Employeeclock from './Employeeclock';
+import HolidayList from '../Holiday';
 
 const Employee = () => {
   const [selectedComponent, setSelectedComponent] = useState(null);
@@ -43,6 +44,8 @@ const Employee = () => {
             <Route path="/employeelogout" element={<Employeelogout />} />
             <Route path="/raiseticket" element={<RaiseTicket addTicket={addTicket} />} />
             <Route path="/clockin" element={<Employeeclock tickets={tickets} />} />
+            <Route path="/Holiday" element={<HolidayList tickets={tickets} />} />
+
             <Route path="/" element={
               <div>
                 <div className={`component ${selectedComponent === 'leave' ? 'employee-slide employee-slide-in' : 'employee-slide'}`}>
@@ -51,6 +54,13 @@ const Employee = () => {
                 <div className={`component ${selectedComponent === 'salaryReports' ? 'employee-slide employee-slide-in' : 'employee-slide'}`}>
                   {selectedComponent === 'salaryReports' && <SalaryReport />}
                 </div>
+
+
+                <div className={`component ${selectedComponent === 'Holiday' ? 'employee-slide employee-slide-in' : 'employee-slide'}`}>
+                  {selectedComponent === 'Holiday' && <HolidayList />}
+                </div>
+
+
                 <div className={`component ${selectedComponent === 'myProfile' ? 'employee-slide employee-slide-in' : 'employee-slide'}`}>
                   {selectedComponent === 'myProfile' && <MyProfile />}
                 </div>

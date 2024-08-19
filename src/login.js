@@ -24,7 +24,7 @@ const LoginPage = () => {
           <div className="form-logo">
             <img src={yourLogo} alt="Your Logo" className="your-logo" />
           </div>
-          <h2>Login</h2>
+          <h1 className='login-admin'>Login</h1>
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" name="email" required />
@@ -33,7 +33,7 @@ const LoginPage = () => {
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" required />
           </div>
-          <button type="button" className="forgot-password-button1">Forgot password?</button>
+          <button type="button" className="forgot-password-admin">Forgot password?</button>
           <button type="submit" className="sign-in-button">Login</button>
           <div className="button-group">
             <GoogleLogin

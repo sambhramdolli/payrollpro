@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import './Navbar.css'; // Updated CSS file name
 import { IoIosPersonAdd } from "react-icons/io";
 import { RiArrowDropDownLine, RiLogoutCircleFill } from "react-icons/ri";
 import { FaHandsHelping, FaPrescription } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
-import img1 from "../assets/S.jpg"; // Your logo image
-import img2 from "../assets/profile.png"; // Your profile image
-
+import logoImage from "../assets/S.jpg"; // Your logo image
+import profileImage from "../assets/profile.png"; // Your profile image
 const NavBar = ({ onButtonClick }) => {
   const [dropdownVisible, setDropdownVisible] = useState({
     profile: false,
@@ -17,7 +16,6 @@ const NavBar = ({ onButtonClick }) => {
     training: false,
     attendance: false,
   });
-
   const dropdownRefs = {
     profile: useRef(null),
     ticket: useRef(null),
@@ -26,7 +24,6 @@ const NavBar = ({ onButtonClick }) => {
     training: useRef(null),
     attendance: useRef(null),
   };
-
   const toggleDropdown = (type) => {
     setDropdownVisible(prev => ({
       ...prev,
@@ -37,7 +34,6 @@ const NavBar = ({ onButtonClick }) => {
       }, {}),
     }));
   };
-
   const handleOutsideClick = (event) => {
     Object.keys(dropdownRefs).forEach(key => {
       if (dropdownVisible[key] && dropdownRefs[key].current && !dropdownRefs[key].current.contains(event.target)) {
@@ -45,91 +41,75 @@ const NavBar = ({ onButtonClick }) => {
       }
     });
   };
-
   useEffect(() => {
     document.addEventListener('click', handleOutsideClick);
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
   }, [dropdownVisible]);
-
   return (
-    <nav className="navbar">
-      <div className="logo-container">
-        <img src={img1} alt="Logo" className='logo' />
+    <nav className="navBar">
+      <div className="navBar-logoContainer">
+        <img src={logoImage} alt="Logo" className='navBar-logo' />
       </div>
-
-      <div className='nav'>
+      <div className='navBar-nav'>
         {/* Team Dropdown */}
-        <div className="profile-icon" onClick={() => toggleDropdown('team')} ref={dropdownRefs.team}>
-          <div className='ticket'>
-            <p className='gd'>Employee Directory</p>
-            <RiArrowDropDownLine className='col' />
+        <div className="navBar-dropdownToggle" onClick={() => toggleDropdown('team')} ref={dropdownRefs.team}>
+          <div className='navBar-dropdownHeader'>
+            <p className='navBar-dropdownTitle'>Employee Directory</p>
+            <RiArrowDropDownLine className='navBar-dropdownIcon' />
           </div>
           {dropdownVisible.team && (
-            <div className='aa'>
-              <div className="dropdown-menu3">
-              <button className="menu" onClick={() => onButtonClick('teamlead')}>
-              Employee by Team
+            <div className='navBar-dropdownMenu'>
+              <button className="navBar-menuItem" onClick={() => onButtonClick('teamlead')}>
+                Employee by Team
               </button>
-              <button className="menu" onClick={() => onButtonClick('employeebyproject')}>
-              Employee by Project
+              <button className="navBar-menuItem" onClick={() => onButtonClick('employeebyproject')}>
+                Employee by Project
               </button>
-              <button className="menu" onClick={() => onButtonClick('employeereport')}>
-              Employee Project Reports
+              <button className="navBar-menuItem" onClick={() => onButtonClick('employeereport')}>
+                Employee Project Reports
               </button>
-              </div>
             </div>
           )}
         </div>
-
-        
-
         {/* Recruitment Dropdown */}
-        <div className="profile-icon" onClick={() => toggleDropdown('recruitment')} ref={dropdownRefs.recruitment}>
-          <div className='ticket2'>
-            <p className='gd'>Recruitment</p>
-            <RiArrowDropDownLine className='col' />
+        <div className="navBar-dropdownToggle" onClick={() => toggleDropdown('recruitment')} ref={dropdownRefs.recruitment}>
+          <div className='navBar-dropdownHeader'>
+            <p className='navBar-dropdownTitle'>Recruitment</p>
+            <RiArrowDropDownLine className='navBar-dropdownIcon' />
           </div>
           {dropdownVisible.recruitment && (
-            <div className='aa'>
-              <div className="dropdown-menu1">
-              <button className="menu23" onClick={() => onButtonClick('interviewscheduling')}>
-              Interview Schedule
+            <div className='navBar-dropdownMenu'>
+              <button className="navBar-menuItem" onClick={() => onButtonClick('interviewscheduling')}>
+                Interview Schedule
               </button>
-              <button className="menu23" onClick={() => onButtonClick('applicanttracking')}>
-              Applicant Tracking
-              </button>
-              </div>
             </div>
           )}
         </div>
-
-        
-
         {/* Profile Dropdown */}
-        <div className="profile-icon" onClick={() => toggleDropdown('profile')} ref={dropdownRefs.profile}>
-          <img src={img2} alt="Profile" />
+        <div className="navBar-dropdownToggle" onClick={() => toggleDropdown('profile')} ref={dropdownRefs.profile}>
+          <img src={profileImage} alt="Profile" className='navBar-profileImage' />
           {dropdownVisible.profile && (
-            <div className="dropdown-menu">
-              <Link className="menu1" to="#" onClick={() => onButtonClick('adminprofile')}>
-                <IoIosPersonAdd className='icon' />
+            <div className="navBar-profileDropdownMenu">
+              <Link className="navBar-profileMenuItem" to="#" onClick={() => onButtonClick('adminprofile')}>
+                <IoIosPersonAdd className='navBar-profileIcon' />
                 My Profile
               </Link>
-              <Link className="menu1" to="#" onClick={() => onButtonClick('adminresignation')}>
-                <FaPrescription className='icon' />
+              <Link className="navBar-profileMenuItem" to="#" onClick={() => onButtonClick('adminresignation')}>
+                <FaPrescription className='navBar-profileIcon' />
                 Resignation
               </Link>
-              <Link className="menu1" to="#" onClick={() => onButtonClick('adminsettings')}>
-                <IoSettings className='icon' />
+              <Link className="navBar-profileMenuItem" to="#" onClick={() => onButtonClick('adminsettings')}>
+                <IoSettings className='navBar-profileIcon' />
                 Settings
               </Link>
-              <Link className="menu1" to="#" onClick={() => onButtonClick('adminhelp')}>
-                <FaHandsHelping className='icon' />
+              <Link className="navBar-profileMenuItem" to="#" onClick={() => onButtonClick('adminhelp')}>
+                <FaHandsHelping className='navBar-profileIcon' />
                 Help
               </Link>
-              <Link className="menu1" to="#" onClick={() => onButtonClick('adminlogout')}>
-                <RiLogoutCircleFill className='icon' />
+              <Link className="navBar-profileMenuItem" to="#" onClick={() => onButtonClick('adminlogout')}>
+                <RiLogoutCircleFill className='navBar-profileIcon' />
                 Logout
               </Link>
             </div>
@@ -139,6 +119,4 @@ const NavBar = ({ onButtonClick }) => {
     </nav>
   );
 };
-
 export default NavBar;
-

@@ -196,7 +196,7 @@ const SalaryReport = () => {
 
   return (
     <div className="salary-report-container">
-      <h2 className='h0'>Salary Report</h2>
+      <h1 className='h0'>Salary Report</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input

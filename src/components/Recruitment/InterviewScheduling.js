@@ -93,7 +93,7 @@ const InterviewScheduling = () => {
     };
 
     const handleBackClick = () => {
-        navigate(-1); // Navigate to the previous page
+        navigate(0); // Navigate to the previous page
     };
 
     return (
@@ -136,15 +136,15 @@ const InterviewScheduling = () => {
                         ) : (
                             <>
                                 <h3>{interview.applicant}</h3>
-                                <p>Date: {interview.date}</p>
-                                <p>Time: {interview.time}</p>
-                                <p>Meeting Link: <a href={interview.link} target="_blank" rel="noopener noreferrer">{interview.link}</a></p>
+                                <p className='name'>Date: {interview.date}</p>
+                                <p className='name'>Time: {interview.time}</p>
+                                <p className='name'>Meeting Link: <a href={interview.link} target="_blank" rel="noopener noreferrer">{interview.link}</a></p>
                                 <div className="button-group">
                                     <button className="edit-btn" onClick={() => handleEdit(interview.id)}>
                                         Edit
                                     </button>
                                     <button className="send-email-btn" onClick={() => sendEmailNotification(interview.applicant, interview.date, interview.time, interview.email, interview.link)}>
-                                        Send Email Notification
+                                        Send Email
                                     </button>
                                 </div>
                             </>

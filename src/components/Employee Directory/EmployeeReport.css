@@ -1,17 +1,14 @@
-.employee-report-container {
-    
+.unique-employee-report-container {
     width: 70%;
     margin: 10px auto;
     padding: 0px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(245, 61, 61, 0.829);
-   /* Enable vertical scrolling */
-    max-height: 100vh; /* Limits the height of the container */
-    /* Gradient background */
-    color: white; /* White text color */
+    max-height: 100vh;
+    color: white;
 }
 
-@keyframes slide-in {
+@keyframes unique-slide-in {
     from {
         transform: translateY(-100%);
         opacity: 0;
@@ -22,8 +19,7 @@
     }
 }
 
-.summary {
-
+.unique-summary {
     margin-left: 5%;
     width: 90%;
     display: flex;
@@ -31,78 +27,76 @@
     margin-bottom: 20px;
 }
 
-.summary-item {
+.unique-summary-item {
     flex: 1;
     padding: 10px;
     text-align: center;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #333; /* Dark text color */
+    color: #333;
 }
 
-.summary-item h3 {
+.unique-summary-item h3 {
     margin: 0;
     color: #555;
 }
 
-.summary-item p {
+.unique-summary-item p {
     margin: 5px 0;
     font-weight: bold;
     color: #333;
 }
 
-.employee-list {
+.unique-employee-list {
     min-height: 45vh;
     margin-left: 5%;
     width: 90%;
     margin-top: 20px;
     border: none;
 }
-.employee-list h3{
-    margin-left: 50px;
 
+.unique-employee-list h3 {
+    margin-left: 50px;
 }
 
-.progress-bar {
+.unique-progress-bar {
     margin-left: 5%;
     width: 90%;
     margin-bottom: 10px;
 }
 
-.bar {
+.unique-bar {
     background-color: #ddd;
     height: 20px;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.bar-fill {
+.unique-bar-fill {
     height: 100%;
-    background-color: #32d856; /* Green color */
+    background-color: #32d856;
     transition: width 0.5s ease-in-out;
 }
 
-.bar-name {
+.unique-bar-name {
     margin-bottom: 5px;
     font-weight: bold;
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.bar-name:hover {
-    color: hsl(256, 86%, 26%); /* Change color on hover */
-/* Slightly enlarge on hover */
-    text-decoration: none /* Underline text on hover */
+.unique-bar-name:hover {
+    color: hsl(256, 86%, 26%);
 }
 
-.bar-label {
+.unique-bar-label {
     text-align: right;
     margin-top: 5px;
     color: #333;
 }
 
-.bok-button {
+.unique-bok-button {
     width: 10%;
     margin: 20px auto;
     display: block;
@@ -115,9 +109,10 @@
     cursor: pointer;
 }
 
-.bok-button:hover {
+.unique-bok-button:hover {
     background-color: #45a049;
 }
-.gb{
+
+.unique-gb {
     margin-left: 0%;
 }

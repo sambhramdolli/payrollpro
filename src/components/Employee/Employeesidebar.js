@@ -32,7 +32,7 @@ const Employeesidebar = ({ onButtonClick }) => {
         <button className="button44" onClick={() => onButtonClick('')}>MY TEAM</button>
         <button className="button55" onClick={() => onButtonClick('salaryReports')}>PAY SLIPS</button>
         <button className="button66" onClick={() => onButtonClick('leave')}>TIME OFF</button>
-        <button className="button77" onClick={() => onButtonClick('')}>HOLIDAY CALENDAR</button>
+        <button className="button77" onClick={() => onButtonClick('Holiday')}>HOLIDAY CALENDAR</button>
       </div>
     </div>
   );

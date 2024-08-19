@@ -27,7 +27,9 @@
     background-position: center;
     background-repeat: no-repeat;
     
-    
+  }
+  .login-admin{
+    color: black;
   }
   
   .form-group {
@@ -91,14 +93,14 @@
     margin-left: -57%;
   }
   
-  .forgot-password-button1 {
+  .forgot-password-admin {
     background: none;
     border: none;
     color: #007BFF;
     text-decoration: underline;
     cursor: pointer;
     margin-top: -15%;
-    margin-left: -39.8%;
+    margin-left: -75.8%;
   }
   
   .create-new-button {

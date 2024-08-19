@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './AdminSettings.css';
 import { IoReturnDownBack } from "react-icons/io5";
 
-const Settings = () => {
+const AdminSettings = () => {
   const [history, setHistory] = useState([]);
   const [filteredHistory, setFilteredHistory] = useState([]);
   const [currentPassword, setCurrentPassword] = useState('');
@@ -13,9 +13,11 @@ const Settings = () => {
   const [showPasswordSuccess, setShowPasswordSuccess] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [name, setName] = useState('John Doe'); // Default name
-  const [profileImage, setProfileImage] = useState('path/to/default/image.jpg'); // Default image
+  const [name, setName] = useState('John Doe');
+  const [profileImage, setProfileImage] = useState('path/to/default/image.jpg');
   const [showEditProfile, setShowEditProfile] = useState(false);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const navigate = useNavigate();
 
   const handleToggleEditProfile = () => {
@@ -29,14 +31,13 @@ const Settings = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setProfileImage(URL.createObjectURL(file)); // Create a URL for the uploaded image
+      setProfileImage(URL.createObjectURL(file));
     }
   };
 
   const handleSaveProfile = () => {
-    // Logic to save the profile can go here
     console.log('Profile saved:', { name, profileImage });
-    navigate('/myprofile'); // Navigate to My Profile page after saving
+    navigate('/myprofile');
   };
 
   const handlePrivacySettings = () => {
@@ -88,7 +89,7 @@ const Settings = () => {
   };
 
   const handleBack = () => {
-    navigate('/');
+    navigate(0);
   };
 
   const handleSearch = (e) => {
@@ -103,18 +104,36 @@ const Settings = () => {
     }
   };
 
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 150) {
+      navigate('/');
+    }
+  };
+
   return (
-    <div className="settings-box">
-      <div className="settings-container">
-        <div className="settings-content">
-          {/* Edit Profile Section */}
-          <div className="half-width">
+    <div 
+      className="admin-settings-box" 
+      onTouchStart={handleTouchStart} 
+      onTouchMove={handleTouchMove} 
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className="admin-settings-container">
+        <div className="admin-settings-content">
+          <div className="admin-settings-half-width">
             <h3>Edit Profile</h3>
             <button onClick={handleToggleEditProfile}>
               {showEditProfile ? 'Hide Edit Profile' : 'Edit Profile'}
             </button>
             {showEditProfile && (
-              <div className="edit-profile-section">
+              <div className="admin-settings-edit-profile-section">
                 <input
                   type="text"
                   placeholder="Name"
@@ -126,42 +145,41 @@ const Settings = () => {
                   accept="image/*"
                   onChange={handleImageChange}
                 />
-                <img src={profileImage} alt="Profile" className="profile-image" />
-                <div className='ddk'>
-                <button className='dds' onClick={handleSaveProfile}>Save Profile</button>
+                <img src={profileImage} alt="Profile" className="admin-settings-profile-image" />
+                <div className='admin-settings-save-button-container'>
+                  <button className='admin-settings-save-button' onClick={handleSaveProfile}>Save Profile</button>
                 </div>
               </div>
             )}
           </div>
 
-          {/* History Section */}
           {showHistory && (
-            <div className="half-width">
-              <div className="history-section">
+            <div className="admin-settings-half-width">
+              <div className="admin-settings-history-section">
                 <h3>History:</h3>
                 <input
                   type="text"
                   placeholder="Search history..."
                   value={searchQuery}
                   onChange={handleSearch}
-                  className="search-bar"
+                  className="admin-settings-search-bar"
                 />
                 <ul>
                   {filteredHistory.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
+                <button className='admin-settings-delete-history-button' onClick={handleDeleteHistory}>Delete History</button>
               </div>
             </div>
           )}
 
-          {/* Change Password Section */}
-          <div className="half-width">
+          <div className="admin-settings-half-width">
             <button onClick={handleToggleChangePassword}>Change Password</button>
           </div>
           {showChangePassword && (
-            <div className="half-width">
-              <div className="password-section">
+            <div className="admin-settings-half-width">
+              <div className="admin-settings-password-section">
                 <input
                   type="password"
                   placeholder="Current Password"
@@ -182,18 +200,16 @@ const Settings = () => {
                 />
                 <button onClick={handleChangePassword}>Save Password</button>
                 {showPasswordSuccess && (
-                  <div className="success-message">Password updated successfully!</div>
+                  <div className="admin-settings-success-message">Password updated successfully!</div>
                 )}
               </div>
             </div>
           )}
         </div>
-        
-          <button className="bk-button" onClick={handleBack}>back</button>
-        
+        <button className="admin-settings-back-button" onClick={handleBack}>Back</button>
       </div>
     </div>
   );
 };
 
-export default Settings;
+export default AdminSettings;

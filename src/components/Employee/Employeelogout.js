@@ -1,38 +1,42 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { IoReturnDownBackOutline } from "react-icons/io5";
-import './Employeelogout.css';
+import { useNavigate } from 'react-router-dom';
+import './Employeelogout.css'; // Ensure the file name matches
 
 const Logout = () => {
-    const [logoutSuccess, setLogoutSuccess] = useState(false);
+    const [isLogoutSuccessful, setIsLogoutSuccessful] = useState(false);
     const navigate = useNavigate();
 
-    const handleConfirmLogout = () => {
+    const handleLogout = () => {
         // Implement logout logic here
         console.log('Logging out...'); // Placeholder for actual logout logic
-        setLogoutSuccess(true);
+        setIsLogoutSuccessful(true);
         setTimeout(() => {
             navigate('/'); // Redirect to home page after a delay
-        }, 2000); // 2 second delay before redirecting
+        }, 2000); // 2-second delay before redirecting
+    };
+
+    const handleCancel = () => {
+        navigate(0); // Redirect to home page immediately
     };
 
     return (
-        <div className="logout-container">
-            <div className="logout-content">
-                <h2 className='hgj'>Confirm Logout</h2>
-                <p>Are you sure you want to logout?</p>
-                <div className="button-container">
-                    <button className="confirm-button" onClick={handleConfirmLogout}>
+        <div className="logout-wrapper">
+            <div className="logout-box">
+                <h1 className='logout-title'>Confirm Logout</h1>
+                <p className='logout-message'>Are you sure you want to logout?</p>
+                <div className="button-group">
+                    <button className="logout-button" onClick={handleLogout}>
                         Logout
                     </button>
-                    <button className="bck-button">
-                        <Link to="/" className="link-button">cancel</Link>
+                    <button className="cancel-button" onClick={handleCancel}>
+                        Cancel
                     </button>
                 </div>
-                {logoutSuccess && <p className="logout-success">Logout successful!</p>}
+                {isLogoutSuccessful && <p className="logout-status">Logout successful!</p>}
             </div>
         </div>
     );
 };
 
 export default Logout;
+

@@ -1,7 +1,7 @@
-// src/components/Admin/AdminDashboard.js
 import React from 'react';
 import { useLeave } from '../contexts/LeaveContext.js';
 import './LeaveRequests.css';
+
 const AdminDashboard = () => {
   const { leaveRequests, updateLeaveRequestStatus } = useLeave();
 
@@ -14,9 +14,9 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="admin-dashboard">
-      <h2>Leave Requests</h2>
-      <table>
+    <div className="leave-requests-container">
+      <h1 className="leave-requests-header">Leave Requests</h1>
+      <table className="leave-requests-table">
         <thead>
           <tr>
             <th>Type of Leave</th>
@@ -36,8 +36,18 @@ const AdminDashboard = () => {
               <td>{request.reason}</td>
               <td>{request.status}</td>
               <td>
-                <button onClick={() => handleAccept(index)}>Accept</button>
-                <button onClick={() => handleReject(index)}>Reject</button>
+                <button
+                  className="leave-requests-action-button leave-requests-accept-button"
+                  onClick={() => handleAccept(index)}
+                >
+                  Accept
+                </button>
+                <button
+                  className="leave-requests-action-button leave-requests-reject-button"
+                  onClick={() => handleReject(index)}
+                >
+                  Reject
+                </button>
               </td>
             </tr>
           ))}

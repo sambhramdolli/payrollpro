@@ -23,7 +23,7 @@ const MemberDetails = () => {
     }, [memberId]);
 
     const handleBack = () => {
-        navigate('/employee-by-project'); // Navigate back to Team page
+        navigate(0); // Navigate back to Team page
     };
 
     const handleEdit = () => {
@@ -48,11 +48,11 @@ const MemberDetails = () => {
     }
 
     return (
-        <div className="member-details-container">
-            <h2 className='dd'>Member Details</h2>
-            <div className="member-details">
-                <img src={memberDetails.profileImage} alt={`${memberDetails.name}'s profile`} className="profile-image" />
-                <div className="member-info">
+        <div className="member-details-wrapper">
+            <h2 className='member-details-title'>Member Details</h2>
+            <div className="member-details-content">
+                <img src={memberDetails.profileImage} alt={`${memberDetails.name}'s profile`} className="member-profile-picture" />
+                <div className="member-info-container">
                     <p><strong>Name:</strong> {memberDetails.name}</p>
                     <p>
                         <strong>Age:</strong> 
@@ -62,6 +62,7 @@ const MemberDetails = () => {
                                 name="age"
                                 value={memberDetails.age}
                                 onChange={handleChange}
+                                className="member-input-field"
                             />
                         ) : (
                             memberDetails.age
@@ -75,6 +76,7 @@ const MemberDetails = () => {
                                 name="qualification"
                                 value={memberDetails.qualification}
                                 onChange={handleChange}
+                                className="member-input-field"
                             />
                         ) : (
                             memberDetails.qualification
@@ -88,6 +90,7 @@ const MemberDetails = () => {
                                 name="address"
                                 value={memberDetails.address}
                                 onChange={handleChange}
+                                className="member-input-field"
                             />
                         ) : (
                             memberDetails.address
@@ -95,13 +98,13 @@ const MemberDetails = () => {
                     </p>
                 </div>
             </div>
-            <div className="button-group">
+            <div className="member-button-container">
                 {editMode ? (
-                    <button className="save-button" onClick={handleSave}>Save</button>
+                    <button className="member-save-btn" onClick={handleSave}>Save</button>
                 ) : (
-                    <button className="edit-button" onClick={handleEdit}>Edit</button>
+                    <button className="member-edit-btn" onClick={handleEdit}>Edit</button>
                 )}
-                <button className="bok-button" onClick={handleBack}>Back</button>
+                <button className="member-back-btn" onClick={handleBack}>Back</button>
             </div>
         </div>
     );

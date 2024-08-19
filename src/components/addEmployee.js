@@ -16,43 +16,43 @@ const AddEmployee = () => {
   };
 
   return (
-    <div className="add-employee-container">
-      <h1>Add Employee</h1>
+    <div className="employee-form-container">
+      <h1 className="employee-form-title">Add Employee</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="employee-form-group">
           <input
             type="text"
             id="name"
-            className="add-employee-input"
+            className="employee-input-field"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
-          <label htmlFor="name" className="add-employee-label">Name</label>
+          <label htmlFor="name" className="employee-input-label">Name</label>
         </div>
-        <div className="form-group">
+        <div className="employee-form-group">
           <input
             type="email"
             id="email"
-            className="add-employee-input"
+            className="employee-input-field"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <label htmlFor="email" className="add-employee-label">Email</label>
+          <label htmlFor="email" className="employee-input-label">Email</label>
         </div>
-        <div className="form-group">
+        <div className="employee-form-group">
           <input
             type="text"
             id="position"
-            className="add-employee-input"
+            className="employee-input-field"
             value={position}
             onChange={(e) => setPosition(e.target.value)}
             required
           />
-          <label htmlFor="position" className="add-employee-label">Position</label>
+          <label htmlFor="position" className="employee-input-label">Position</label>
         </div>
-        <button type="submit">Add Employee</button>
+        <button type="submit" className="employee-submit-button">Add Employee</button>
       </form>
     </div>
   );
