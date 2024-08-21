@@ -1,12 +1,16 @@
 .help-container {
-    width: 50%;
-    margin-right: 600px;
+    width: 60%;
     padding: 20px;
     background: transparent;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     animation: fadeInEffect 0.5s ease-in-out;
-    color: white;
+    color: #fcfcfc;
+    border: 2px solid #fbfbfb;
+    margin: 40px auto;
+    box-sizing: border-box;
+    background-color: #2f30312f; /* Example background for main team page */
+    margin-right: 50%;   
 }
 
 .help-title {
@@ -16,7 +20,8 @@
 }
 
 .contact-label {
-    margin-left: 0%;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .contact-details {
@@ -27,8 +32,7 @@
     margin-top: 10px;
     /* background: #fafafa; */
     padding: 20px;
-    border-radius: 4px;
-    border: 1px solid #eee;
+    
     animation: slideInEffect 0.5s ease-in-out;
 }
 

@@ -12,7 +12,7 @@ const Help = () => {
     return (
         <div className="help-container">
             <h1 className="help-title">Help Menu</h1>
-            <p className="contact-label">Contact Information:</p>
+            <p className="contact-label">Contact Information</p>
             <div className="contact-section">
                 <ul className="contact-list">
                     <li className="contact-item">Company Email: company@example.com</li>

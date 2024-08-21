@@ -1,18 +1,20 @@
-.logout-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin-right: 1500px;
-    /* Set background color to white */
-}
-
 .logout-box {
     background: transparent;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     text-align: center;
+    color: #060606;
+    border: 2px solid #fbfbfb;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #2f30312f; /* Example background for main team page */
+    margin-right: 50%;
+    width: 60%;
+
+
+    
 }
 
 .logout-title {

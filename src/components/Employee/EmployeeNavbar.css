@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(231, 221, 221, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .employee-navbar__logo-container {
@@ -53,7 +53,6 @@ body {
   right: 0;
   font-size: 25px;
   border-radius: 5px;
-  box-shadow: 0 20px 10px rgba(235, 194, 194, 0.911);
   z-index: 1000;
   background-color: rgb(7, 10, 92);
   padding: 10px;
@@ -117,7 +116,6 @@ body {
   right: 0;
   font-size: 25px;
   border-radius: 5px;
-  box-shadow: 0 20px 10px rgba(235, 194, 194, 0.911);
   z-index: 1000;
   background-color: rgb(7, 10, 92);
   padding: 10px;

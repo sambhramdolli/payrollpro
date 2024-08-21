@@ -2,42 +2,41 @@
   display: flex;
   justify-content: flex-start;
   padding: 30px;
-  background-color: #ffffff;
-  width: 900px; 
-  margin-right: 0px;
-  
-  height:530px;
+  background-color: #2f30312f;
+  height: 70vh;
   border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   margin-top: -18px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  border: 2px solid #fbfbfb;
+  width: 60%;
 }
 .Leave{
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .leave-form-container {
-  width: 40%;
+  width: 50%;
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  height: 70%;
-  margin-right: 20px;
-  background-color: #fefbfb;
+  height: 100%;
+  margin-right: 10px;
+  
   margin-top: -19px;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .leave-form h1 {
   margin-bottom: 10px;
-  color: black;
 }
 
 .leave-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: black;
+  color: rgb(255, 254, 254);
 }
 
 .leave-form label {
@@ -70,21 +69,21 @@
 }
 
 .leave-info-container {
-  width: 48%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 450px; 
   margin-top: -19px;/* Set a maximum height to allow scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   color: black;
+  scrollbar-width: none;
 }
 
 .remaining-leaves {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 5px;
-  background-color: #fcfcfc;
+  margin-left: 40px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
@@ -99,9 +98,10 @@
 .next-leave {
   width: 40%;
   padding: 10px;
-  background-color: #f0f0f0;
+  background-color: #ffff;
   border-radius: 15px;
   text-align: center;
+  color: #070707;
 }
 
 .leave-entitlement h3,
@@ -130,8 +130,7 @@
 }
 
 .leave-info th {
-  background-color: #ffffff;
-  color: black;
+  color: rgb(255, 254, 254);
 
 }
 
@@ -139,8 +138,8 @@
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 5px;
-  background-color: #fffeff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 35px;
 }
 
 .leave-types {
@@ -166,26 +165,17 @@
 .leave-type h3 {
   margin: 0;
   font-size: 16px;
-  color: #555;
+  color:#000;
 }
 
 .leave-days {
   font-size: 24px;
   margin: 10px 0;
-  color: #333;
+  color: #070707;
 }
 
-.leave-type span {
-  font-size: 14px;
-  color: #777;
+.Leavetype{
+  color: #000;
 }
 
-.leave-form-container h2,
-.remaining-leaves h2,
-.leave-availability h2{
-  color: #333;
-}
-.leave-info h2{
-  margin-top: -31px;
-  color: #333;
-}
+

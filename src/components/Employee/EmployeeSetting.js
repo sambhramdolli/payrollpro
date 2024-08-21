@@ -36,7 +36,7 @@ const EmployeeSetting = () => {
   const handleSaveProfile = () => {
     // Logic to save the profile can go here
     console.log('Profile saved:', { name, profileImage });
-    navigate('/myprofile'); // Navigate to My Profile page after saving
+    navigate(-1); // Navigate to My Profile page after saving
   };
 
   const handlePrivacySettings = () => {

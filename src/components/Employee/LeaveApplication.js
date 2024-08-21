@@ -140,11 +140,11 @@ const LeaveApplication = () => {
           <h1  className='Leave'>Your Overview</h1>
           <div className="leave-overview">
             <div className="leave-entitlement">
-              <h3  className='Leave'>Total Leaves</h3>
+              <h3  className='Leavetype'>Total Leaves</h3>
               <p className="leave-days">{totalLeaves.sick + totalLeaves.casual}</p>
             </div>
             <div className="leave-entitlement">
-              <h3  className='Leave'>Remaining Leaves</h3>
+              <h3  className='Leavetype'>Remaining Leaves</h3>
               <p className="leave-days">{remainingLeaves.sick + remainingLeaves.casual}</p>
             </div>
           </div>

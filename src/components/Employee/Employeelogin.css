@@ -4,12 +4,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('../../assets/bg.png'); 
+  background-image: url('../../assets/bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
 .custom-login-form {
   background-color: white;
   padding: 2rem;
@@ -24,25 +23,21 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-
 .custom-form-group {
   margin-bottom: 1rem;
 }
-
 .custom-label {
   display: block;
   margin-top: -3%;
   margin-left: -48%;
 }
-
 .custom-input {
   width: 60%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.4); 
+  background-color: rgba(255, 255, 255, 0.4);
 }
-
 .custom-sign-in-button {
   width: 60%;
   padding: 0.75rem;
@@ -50,20 +45,18 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  background-color: #564caf;
+  background-color: #564CAF;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   margin-left: 20%;
   transition: transform 0.3s, border 0.3s;
 }
-
 .custom-sign-in-button:hover, .custom-google-button:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
-
 .custom-button-group {
   width: 1%;
   padding: 0.75rem;
@@ -75,15 +68,13 @@
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
-
 .custom-signup-prompt {
   margin-top: 2rem;
   color: #555;
   margin-left: -57%;
 }
-
 .custom-forgot-password-button {
   background: none;
   border: none;
@@ -91,9 +82,8 @@
   text-decoration: underline;
   cursor: pointer;
   margin-top: -15%;
-  margin-left: -75.8%;
+  margin-left: -39.8%;
 }
-
 .custom-create-new-button {
   background: none;
   border: none;
@@ -103,15 +93,13 @@
   margin-top: -5.7%;
   margin-left: -3%;
 }
-
 .custom-google-logo {
   width: 20px;
   height: 20px;
   margin-left: 2%;
 }
-
 .custom-logout-button {
-  background-color: #f44336; 
+  background-color: #F44336;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -120,9 +108,8 @@
   font-size: 16px;
   margin-top: 10px;
 }
-
 .custom-logout-button:hover {
-  background-color: #d32f2f;
+  background-color: #D32F2F;
 }
 .log-in{
   color: black;
@@ -130,9 +117,8 @@
 .email-emp{
   color: black;
 }
-
 .custom-your-logo {
-  width: 200px; 
+  width: 200px;
   height: auto;
   margin-bottom: -40px;
   margin-top: -50px;

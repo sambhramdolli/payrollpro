@@ -1,12 +1,16 @@
-/* Resignation.css */
 .form-container12, .status-page {
-  width: 65%;
-  margin: 0 auto;
+  width: 60%;
+  margin: 40px auto;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background-color: rgb(7, 10, 92);
+  background-color: #2f30312f;
   margin-right: 900px;
+  color: #060606;
+  border: 2px solid #fbfbfb;
+  box-sizing: border-box;
+  margin-right: 50%;
+
 }
 
 .thg {
@@ -22,6 +26,7 @@
 .form-group {
   margin-bottom: 20px;
   margin-left: 2%; 
+  color: #fff;
 }
 
 textarea#reasonForLeaving {
@@ -80,11 +85,10 @@ button.button:hover {
 .status-check-icon {
   position: absolute;
   margin-top: 15px;
-  right: 20px;
   font-size: 24px;
   cursor: pointer;
   color: #dde1e6;
-  margin-right: 35%;
+  
 }
 
 .status-check-icon:hover {

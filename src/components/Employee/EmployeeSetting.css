@@ -1,15 +1,21 @@
-/* Main settings box */
 .settings-box {
-  width: 40%; /* Set width to 50% */
-  margin-right: 650px;
+  width: 60%; /* Set width to 50% */
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 2px solid #fbfbfb;
+  border-radius: 10px;
   background: transparent;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   text-align: center; /* Center align content */
   animation: fadeIn 0.5s; /* Fade-in animation */
   color: white;
+  margin: 40px auto;
+  box-sizing: border-box;
+  background-color: #2f30312f; /* Example background for main team page */
+  margin-right: 50%;
+  height: 70vh; /* Limit height to 80% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: none;
+  
 }
 
 /* Animation for fading in */
@@ -33,7 +39,7 @@
 }
 
 .half-width {
-  width: 100%; /* Full width of the container */
+  width: 80%; /* Full width of the container */
   padding: 10px;
   animation: slideIn 0.3s ease forwards; /* Slide-in effect */
 }

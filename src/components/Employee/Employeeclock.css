@@ -1,13 +1,24 @@
 .app {
   text-align: center;
-  font-family: Arial, sans-serif;
-  width: 65%;
+  width: 60%;
   background-color: rgba(0, 0, 0, 0.089);
-  box-shadow: 0 4px 8px rgba(233, 231, 231, 0.815);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 10px;
   position: relative;
   margin-right: 820px;
+  color: #060606;
+  border: 2px solid #fbfbfb;
+  border-radius: 10px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-right: 50%;
+  height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+
 }
 
 .app-header {
@@ -27,13 +38,13 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 17%;
+    width: 20%;
   }
   
   .calendar-icon {
     font-size: 1.5rem;
     color: white;
-    margin-right: 10px;
+    margin-right: 5px;
   }
   
   .date-picker {
@@ -117,6 +128,8 @@
     transition: background-color 0.3s, transform 0.3s;
     margin-top: 20px;
     width: 200px;
+    margin-right: 50px;
+    margin-left: 50px;
   }
   
   .view-details-btn:hover {

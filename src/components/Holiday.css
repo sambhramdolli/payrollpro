@@ -1,126 +1,111 @@
-/* HolidayList.css */
-
 .holidayListContainer {
-    width: 40%;
-    text-align: center;
-    font-family: 'Arial, sans-serif';
-    margin-right: 560px;
-    
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(19, 18, 18, 0.788);
-    max-height: 60vh;
-    overflow-y: auto;
-    transition: all 0.3s ease-in-out;
-  }
-  .holidayListContainer:hover {
-    transform: scale(1.02);
-  }
-  
-  .holidayListTitle {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #e3eee5;
-    font-size: 2em;
-  }
-  
-  .monthHeader {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  
-  .currentMonth {
-    font-size: 1.5em;
-    color: #007bff;
-  }
-  
-  .holidayList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .holidayListItem {
-    padding: 10px;
-    margin: 5px 0;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px; /* Limit max width for better centering */
-  }
-  
-  .holidayListItem:hover {
-    transform: translateX(10px);
-  }
-  
-  .holidayText {
-    display: flex;
-    align-items: center;
-  }
-  
-  .holidayName, .holidayDate {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .monthButtons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .monthButton {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .monthButton:hover {
-    background: #0056b3;
-  }
-  
-  .toggleViewButtonContainer, .backButtonContainer {
-    margin-top: 20px;
-  }
-  
-  .toggleViewButton {
-    margin-right: 12%;
-    padding: 10px 20px;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    width: fit-content;
-  }
+  width: 60%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+  height: 70vh;
+  color: #060606;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border: 2px solid #fbfbfb;
+  margin: 40px auto;
+  box-sizing: border-box;
+  background-color: #2f30312f;
+  margin-right: 50%;
+  scrollbar-width: none;
+}
 
-  .backButton {
-    margin-right: 12%;
-    padding: 10px 20px;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    width: fit-content;
-  }
-  
-  .toggleViewButton:hover, .backButton:hover {
-    background: #218838;
-  }
+.holidayListContainer:hover {
+  transform: scale(1.02);
+}
+
+.holidayListTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e3eee5;
+  font-size: 2em;
+}
+
+.monthHeader {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.currentMonth {
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.holidayList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.holidayListItem {
+  padding: 10px;
+  margin: 5px 0;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.holidayListItem:hover {
+  transform: translateX(10px);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.monthButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.monthButton, .toggleViewButton, .backButton {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  flex: 1;
+  max-width: 150px;
+}
+
+.monthButton:hover, .toggleViewButton:hover, .backButton:hover {
+  background: #0056b3;
+}
+
+.toggleViewButton {
+  background: #28a745;
+}
+
+.toggleViewButton:hover {
+  background: #218838;
+}
+
+.backButton {
+  background: #dc3545;
+}
+
+.backButton:hover {
+  background: #c82333;
+}

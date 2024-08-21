@@ -1,0 +1,124 @@
+.team-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #060606;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fbfbfb;
+    border-radius: 10px;
+    width: 60%;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #2f30312f; /* Example background for main team page */
+    margin-right: 50%;
+    height: 70vh;
+
+
+
+    color: #060606;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fbfbfb;
+    border-radius: 10px;
+    width: 60%;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #2f30312f; /* Example background for main team page */
+    margin-right: 50%;
+
+  }
+
+  .team-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #fff;
+  }
+  
+  
+  .main-team-page {
+    background-color: #2f30312f; /* Example background for main team page */
+  }
+  
+  .employee-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures that all content is centered */
+    justify-content: center; /* Vertically centers the content */
+    gap: 10px; /* Adds some space between elements */
+  }
+  
+  .employee-details h2 {
+    margin: 10px 0; /* Adjusts the margin around the employee's name */
+    font-size: 1.5em; /* You can adjust this size as per your design */
+    color: #060606; /* Ensures the text color contrasts well */
+  }
+  
+  .tree-structure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 60vh; /* Set max height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none;
+  }
+  
+  .tree-node {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subordinate-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .profile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.4s ease;
+    width: 140px;
+    margin: 10px;
+  }
+  
+  .profile-box:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+  
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #152777;
+    color: #fff;
+    cursor: pointer;
+    display: block; /* Ensure the button behaves like a block-level element */
+    text-align: center;
+    margin-right: 45%;
+  }
+  
+  .employee-details {
+    text-align: center;
+  }

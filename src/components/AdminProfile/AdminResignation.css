@@ -1,12 +1,12 @@
 /* Base Styles */
 .admin-form-container {
-  width: 65%;
+  width: 60%;
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
   border-radius: 8px;
   background-color: rgb(7, 10, 92);
-  margin-right: 900px;
+  margin-right: 1000px;
 }
 
 .admin-heading {

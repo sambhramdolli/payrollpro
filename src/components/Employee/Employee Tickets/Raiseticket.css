@@ -2,14 +2,23 @@
     padding: 20px;
     background: transparent;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(17, 17, 17, 0.863);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fbfbfb;
     position: relative;
     overflow: hidden;
     z-index: 1;
-    width: 65%;
-    margin-right: 950px;
+    width: 60%;
     height: 70vh;
     overflow-y: auto;
+    color: #060606;
+    margin: 40px auto;
+    box-sizing: border-box;
+    background-color: #2f30312f; /* Example background for main team page */
+    margin-right: 50%;
+    scrollbar-width: none;
+
+    
+    
 }
 
 .raise-ticket-container::before {

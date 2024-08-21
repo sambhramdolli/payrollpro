@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import './Holiday.css'
 
 const HolidayList = () => {
   const [holidays, setHolidays] = useState([]);
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1); // Initialize with current month
-  const [isDetailedView, setIsDetailedView] = useState(false); // State for detailed view
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1);
+  const [isDetailedView, setIsDetailedView] = useState(false);
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Mock data for demonstration
     const mockHolidays = [
       { id: 1, name: 'Republic Day', date: '2024-01-26' },
       { id: 2, name: 'Makar Sankranti', date: '2024-01-14' },
@@ -36,22 +35,21 @@ const HolidayList = () => {
   }, []);
 
   const handleNextMonth = () => {
-    setCurrentMonth(prevMonth => (prevMonth % 12) + 1); // Wrap around to January if at December
+    setCurrentMonth(prevMonth => (prevMonth % 12) + 1);
   };
 
   const handlePrevMonth = () => {
-    setCurrentMonth(prevMonth => prevMonth === 1 ? 12 : prevMonth - 1); // Wrap around to December if at January
+    setCurrentMonth(prevMonth => prevMonth === 1 ? 12 : prevMonth - 1);
   };
 
   const handleBack = () => {
-    navigate(0); // Navigate back to the previous page
+    navigate(0);
   };
 
   const handleToggleView = () => {
-    setIsDetailedView(!isDetailedView); // Toggle detailed view
+    setIsDetailedView(!isDetailedView);
   };
 
-  // Function to get month name based on month number
   const getMonthName = (monthNumber) => {
     const months = [
       'January', 'February', 'March', 'April', 'May', 'June',
@@ -60,12 +58,9 @@ const HolidayList = () => {
     return months[monthNumber - 1];
   };
 
-  const handleBack2 = () => {
-    navigate(0);
-  };
   return (
     <div className='holidayListContainer'>
-      <p className='holidayListTitle'>Holiday's</p>
+      <p className='holidayListTitle'>Holidays</p>
       {!isDetailedView && (
         <div className='monthHeader'>
           <div className='currentMonth'>{getMonthName(currentMonth)}</div>
@@ -74,7 +69,7 @@ const HolidayList = () => {
       <ul className='holidayList'>
         {holidays
           .filter((holiday) => {
-            if (isDetailedView) return true; // Show all holidays in detailed view
+            if (isDetailedView) return true;
             const holidayMonth = parseInt(holiday.date.split('-')[1], 10);
             return holidayMonth === currentMonth;
           })
@@ -84,22 +79,18 @@ const HolidayList = () => {
             </li>
           ))}
       </ul>
-      {!isDetailedView && (
-        <div className='monthButtons'>
-          <button className='monthButton' onClick={handlePrevMonth}>Previous</button>
-          <button className='monthButton' onClick={handleNextMonth}>Next</button>
-        </div>
-      )}
-      <div className='toggleViewButtonContainer'>
+      <div className='buttonContainer'>
+        {!isDetailedView && (
+          <div className='monthButtons'>
+            <button className='monthButton' onClick={handlePrevMonth}>Previous</button>
+            <button className='monthButton' onClick={handleNextMonth}>Next</button>
+          </div>
+        )}
         <button className='toggleViewButton' onClick={handleToggleView}>
           {isDetailedView ? 'Show Monthly View' : 'View Details'}
         </button>
+        <button className='backButton' onClick={handleBack}>Back</button>
       </div>
-      
-        <div className='backButtonContainer'>
-          <button className='backButton' onClick={handleBack2}>Back</button>
-        </div>
-      
     </div>
   );
 };
